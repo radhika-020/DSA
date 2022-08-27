@@ -1,0 +1,24 @@
+#https://www.interviewbit.com/problems/largest-permutation/
+
+class Solution:
+    # @param A : list of integers
+    # @param B : integer
+    # @return a list of integers
+    def solve(self, A, B):
+        i = 0 #This is the pointer that goes from left to right.
+        _max = len(A)
+        d = {x : i for i, x in enumerate(A)}
+        
+        while B and i < len(A):
+            j = d[_max]
+            if i == j:
+                pass
+            else:
+                B -= 1
+                A[i], A[j] = A[j], A[i]
+                d[A[i]], d[A[j]] = d[A[j]], d[A[i]]
+                
+            i += 1
+            _max -= 1
+                
+        return A
