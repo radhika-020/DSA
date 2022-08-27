@@ -6,3 +6,13 @@ def kth_largest(arr, k):
     return max(arr)
 
 #In this question, we used an approach as we need to fi d the kth largest element in the list, therefore, at first, using loop, we are removing the k-1 largest elements from the array. Then, at the end of the loop, we are left with the array which has the kth largest element. Therefore, in that case, return the max element of the array.
+#Time Complexity : - O(kN)
+
+#OR
+
+def kth_largest(arr, k):
+    n = len(arr)
+    arr.sort()
+    return [n-k]
+#Time Complexity :- O(NlogN)
+
